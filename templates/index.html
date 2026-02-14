@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ChapterDB</title>
+  </head>
+  <body>
+    <h1>ChapterDB | My Library</h1>
+    {% if not books %}
+    <p>Library is empty, No books available.</p>
+    {% else %}
+    {% for book in books %}
+    <ul>
+      <li>{{book.title}} - {{book.author}} - {{book.rating}}/10</li>
+    </ul>
+    {% endfor %}
+    {% endif %}
+
+    <a href="{{ url_for('add') }}">Add New Book</a>
+  </body>
+</html>
